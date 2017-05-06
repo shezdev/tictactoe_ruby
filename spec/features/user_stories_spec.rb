@@ -13,9 +13,6 @@ describe "User Stories" do
   # I will place my MARKER on an empty FIELD on the BOARD.
 
   it "2. Allows a player to place a marker on an empty field on the board" do
-    game = Game.new
-    game.board = [["", "", ""], ["", "", ""], ["", "", ""]]
-    game.request_move
     game.player1.current_move = 1
     expect { (game.board[0][0]).to eq(game.player1.marker) }
   end

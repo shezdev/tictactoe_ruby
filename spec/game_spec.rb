@@ -34,7 +34,9 @@ describe Game do
     context "When the game starts" do
       it "prompts player 1 to choose their move" do
         expect { game.request_move }.not_to raise_error
+        expect { game.player1.marker.to be("X").or(eq("O"))}
         expect { (game.player1.current_move).to be_a(integer) }
+
       end
     end
   end
