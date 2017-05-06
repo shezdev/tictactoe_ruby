@@ -15,10 +15,9 @@ describe "User Stories" do
   it "2. Allows a player to place a marker on an empty field on the board" do
     game = Game.new
     game.board = [["", "", ""], ["", "", ""], ["", "", ""]]
-    puts "Hi Player1, your marker is a #{game.player1.marker}"
-    puts "Please choose a field on the board by enter 1-9"
-    move = 1
-    expect {(game.board)}.to eq([["#{game.player1.marker}", "", ""], ["", "", ""], ["", "", ""]])
+    game.request_move
+    game.player1.current_move = 1
+    expect { (game.board[0][0]).to eq(game.player1.marker) }
   end
 
 end
@@ -43,7 +42,8 @@ end
 # feature test 2
 # game = Game.new
 # game.board = [["", "", ""], ["", "", ""], ["", "", ""]]
+# game.request_move
 # puts "Hi Player1, your marker is a #{game.player1.marker}"
 # puts "Please choose a field on the board by enter 1-9"
-# move = 1
-# expect {(game.board)}.to eq([["#{game.player1.marker}", "", ""], ["", "", ""], ["", "", ""]])
+# game.player1.current_move = 1
+# expect { (game.board[0][0]).to eq(game.player1.marker) }

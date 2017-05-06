@@ -13,15 +13,28 @@ describe Game do
         expect { game.player1 }.not_to raise_error
         expect { game.player2 }.not_to raise_error
       end
+      it "has an empty board with 9 fields" do
+        expect { game.board }.not_to raise_error
+        expect { game.board.to eq([["", "", ""], ["", "", ""], ["", "", ""]])}
+      end
     end
   end
 
   describe "#play" do
     context "when the game starts" do
-      it "Two players are assigned markers" do
+      it "assigns markers to two players" do
         expect { game.play }.not_to raise_error
         expect { game.player1.marker.to be("X").or(eq("O"))}
-        expect { game.player2.marker.to be("O").or(eq("X"))} 
+        expect { game.player2.marker.to be("O").or(eq("X"))}
+      end
+    end
+  end
+
+  describe "#request_move" do
+    context "When the game starts" do
+      it "prompts player 1 to choose their move" do
+        expect { game.request_move }.not_to raise_error
+        expect { (game.player1.current_move).to be_a(integer) }
       end
     end
   end
