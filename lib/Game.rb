@@ -1,4 +1,4 @@
 class Game
-  def allocateMarkerTo
+  def allocateMarkerTo(player)
   end
 end
