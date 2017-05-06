@@ -20,6 +20,8 @@ describe Game do
     context "when the game starts" do
       it "Two players are assigned markers" do
         expect { game.play }.not_to raise_error
+        expect { game.player1.marker.to be("X").or(eq("O"))}
+        expect { game.player2.marker.to be("O").or(eq("X"))} 
       end
     end
   end
