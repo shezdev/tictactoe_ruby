@@ -48,7 +48,7 @@ https://github.com/matiassingers/awesome-readme
 ```
 As a PLAYER
 When I start a GAME of Tic Tac Toe
-I will be allocated a MARKER ("O" or "X") randomly.
+Myself and my opponent will be allocated a MARKER ("O" or "X") randomly.
 
 As a PLAYER
 When I am prompted to take my turn
