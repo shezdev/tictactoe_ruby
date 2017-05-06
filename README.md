@@ -71,3 +71,28 @@ If it is my turn, and I use the last empty space on the BOARD without resulting 
 It is a draw, and the GAME is over.
 
 ```
+
+## PLaying
+
+```
+feature test 1
+
+# require "./lib/game.rb"
+#  => true
+# >game = Game.new
+#  => #<Game:0x007fa2a40a3018 @player1=#<Player:0x007fa2a40a2ff0 @marker="">, @player2=#<Player:0x007fa2a40a2f50 @marker="">>
+# > game.play
+#  => "O"
+# > game.player1
+#  => #<Player:0x007fa2a40a2ff0 @marker="X">
+# > game.player2
+#  => #<Player:0x007fa2a40a2f50 @marker="O">
+# > game.player1.marker
+#  => "X"
+# > game.player2.marker
+#  => "O"
+
+feature test 2
+
+
+```
