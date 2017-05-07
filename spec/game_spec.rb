@@ -41,15 +41,17 @@ describe Game do
     end
   end
 
-  describe "#board_empty?" do
-    context "during the game" do
-      it "checks if board is empty" do
-        board1 = [["", "", ""], ["", "", ""], ["", "", ""]]
-        board2 = [["X", "O", "X"], ["O", "X", "X"], ["O", "X", "O"]]
-        expect { board_empty?(board1) }.not_to raise_error
-        expect { board_empty?(board1) }.to be_truthy
-        expect { board_empty?(board1) }.to be_falsey
-
+  describe "#boardEmpty?" do
+    context "checks if board is empty during the game" do
+      it "returns true (if board is empty)" do
+        board = [["", "", ""], ["", "", ""], ["", "", ""]]
+        expect { game.boardEmpty?(board) }.not_to raise_error
+        expect { game.boardEmpty?(board).to be_truthy }
+      end
+      it "returns false (if board is not empty)" do
+        board = [["X", "O", "X"], ["O", "X", "X"], ["O", "X", "O"]]
+        expect { game.boardEmpty?(board) }.not_to raise_error
+        expect { game.boardEmpty?(board).to be_falsey }
       end
     end
   end
